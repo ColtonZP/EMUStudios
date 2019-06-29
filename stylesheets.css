@@ -1,0 +1,356 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: ineline-block;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+header {
+  background: url("imgs/header.jpg") no-repeat fixed top/300%;
+  width: 100%;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.75);
+  position: -webkit-sticky;
+  position: sticky;
+  top: -75px;
+  z-index: 2;
+}
+
+@media screen and (min-width: 768px) {
+  header {
+    background-size: 200%;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  header {
+    background-size: 125%;
+    top: -100px;
+  }
+}
+
+header h1 {
+  width: 100%;
+  color: white;
+  font-weight: 400;
+  padding-top: 75px;
+  font-size: 42px;
+}
+
+header h1 b {
+  font-weight: 900;
+}
+
+@media screen and (min-width: 1300px) {
+  header h1 {
+    padding-top: 100px;
+    font-size: 72px;
+  }
+}
+
+header a {
+  color: transparent;
+  margin: 0 20px;
+}
+
+header a .header-link {
+  height: 25px;
+  width: 25px;
+  fill: white;
+}
+
+header nav li {
+  display: inline-block;
+  color: white;
+  padding: 0 10px;
+  font-size: 16px;
+  font-weight: 700;
+  text-shadow: black 0 0 10px;
+  margin: 10px 0;
+}
+
+header nav li:not(:last-child) {
+  border-right: 2px solid white;
+}
+
+header nav li a {
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.player {
+  background: #484848;
+  width: 100%;
+  margin-bottom: 10px;
+  position: relative;
+  padding: 10px;
+  text-align: center;
+}
+
+.player img {
+  margin: 0 10% 10px;
+  width: 80%;
+}
+
+.player .song-title, .player .time-container {
+  padding-bottom: 5px;
+}
+
+.player progress {
+  background-color: black;
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.player progress::-webkit-progress-bar {
+  background-color: black;
+}
+
+.player progress::-webkit-progress-value {
+  background: -webkit-gradient(linear, left top, right top, from(#1eeb04), to(#118602));
+  background: linear-gradient(90deg, #1eeb04, #118602);
+}
+
+.song-title:hover {
+  color: #118602;
+}
+
+.control-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+}
+
+.control-container .amplitude-play-pause {
+  width: 33.3%;
+  height: 24px;
+  cursor: pointer;
+}
+
+.control-container .amplitude-paused {
+  background: url("imgs/play.svg") no-repeat center/contain;
+}
+
+.control-container .amplitude-playing {
+  background: url("imgs/pause.svg") no-repeat center/contain;
+}
+
+.control-container .amplitude-next {
+  background: url("imgs/next.svg") no-repeat center/contain;
+}
+
+.control-container .amplitude-prev {
+  background: url("imgs/prev.svg") no-repeat center/contain;
+}
+
+.control-container .amplitude-prev, .control-container .amplitude-next {
+  width: 33.3%;
+  height: 16px;
+  margin-top: 4px;
+  cursor: pointer;
+}
+
+.playlist {
+  background: #484848;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.playlist .amplitude-play {
+  margin: 20px 0;
+  cursor: pointer;
+}
+
+.playlist .amplitude-play:last-child {
+  margin: 0;
+}
+
+.amplitude-play {
+  margin: 5px 0;
+}
+
+.buy-download-buttons {
+  text-align: center;
+  margin: 10px 0;
+}
+
+@media screen and (min-width: 768px) {
+  .buy-download-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+.buy-download-buttons a {
+  background: #118602;
+  border: none;
+  font-size: 16px;
+  padding: 2px 10px;
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bottom-player {
+  width: 100%;
+  background: black;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0px;
+  padding: 10px calc(5% + 20px);
+}
+
+@media screen and (min-width: 768px) {
+  .bottom-player {
+    padding: 10px 20px;
+    width: 70%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+.bottom-player .song-name {
+  display: block;
+  margin-bottom: 10px;
+}
+
+main {
+  color: white;
+  position: relative;
+}
+
+main .container {
+  background: linear-gradient(-45deg, #151515, #2E2E2E);
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  position: relative;
+}
+
+@media screen and (min-width: 768px) {
+  main .container {
+    max-width: 1200px;
+    width: 70%;
+  }
+}
+
+main .container button {
+  background: #118602;
+  border: none;
+  padding: 2px 10px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  outline: none;
+}
+
+body {
+  background: #e0e0e0;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+#about {
+  background: linear-gradient(45deg, #33a1ff, #0089FF);
+}
+
+#about .quote {
+  text-align: right;
+}
+
+#singles-slideshow {
+  background: none;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  #singles-slideshow {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+#singles-slideshow .singles-playlist {
+  background: #2E2E2E;
+  padding: 20px;
+}
+
+#singles-slideshow .singles-playlist .amplitude-play {
+  position: relative;
+}
+
+#singles-slideshow .singles-playlist .amplitude-play:first-child {
+  margin-top: 0px;
+}
+
+#singles-slideshow .singles-playlist .buy-download-buttons {
+  position: absolute;
+  margin: 0;
+  top: 0;
+  right: 0;
+}
+
+#singles-slideshow .slideshow img {
+  width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+  .album-body {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+.album-name {
+  margin-top: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .album-name::before {
+    content: '';
+    display: block;
+  }
+}
+
+.videos {
+  width: 100%;
+}
+
+.videos .video iframe {
+  display: block;
+  margin: 10px auto;
+}
+
+.description {
+  -webkit-transition: all .3s linear;
+  transition: all .3s linear;
+  display: hidden;
+  max-height: 0px;
+  overflow: hidden;
+}
+/*# sourceMappingURL=stylesheets.css.map */
