@@ -1,20 +1,19 @@
 const toggleMenu = document.querySelector('.toggleMenu');
 const ul = document.querySelector('UL');
 const arrow = toggleMenu.querySelector('SVG');
-const desc1 = document.querySelector('.desc1');
 const btn1 = document.querySelector('.btn1');
-const desc2 = document.querySelector('.desc2');
 const btn2 = document.querySelector('.btn2');
 
 let showingUl = false;
 
-function toggleDesc(btn, des) {
-  if (btn.innerHTML === 'Show more') {
-    des.style.maxHeight = '100vh';
-    btn.innerHTML = 'Show less';
+function toggleDesc(e) {
+  e.preventDefault();
+  if (e.target.innerHTML === 'Show more') {
+    e.target.previousElementSibling.style.maxHeight = '100vh';
+    e.target.innerHTML = 'Show less';
   } else {
-    des.style.maxHeight = '0px';
-    btn.innerHTML = 'Show more';
+    e.target.previousElementSibling.style.maxHeight = '0px';
+    e.target.innerHTML = 'Show more';
   }
 }
 
@@ -49,6 +48,6 @@ console.log(eventType);
 
 document.addEventListener('DOMContentLoaded', function () {
   toggleMenu.addEventListener(eventType, showUl)
-  btn1.addEventListener(eventType, _ => { toggleDesc(btn1, desc1) })
-  btn2.addEventListener(eventType, _ => { toggleDesc(btn2, desc2) })
+  btn1.addEventListener(eventType, toggleDesc)
+  btn2.addEventListener(eventType, toggleDesc)
 })
