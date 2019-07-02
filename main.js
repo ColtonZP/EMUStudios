@@ -18,7 +18,8 @@ function toggleDesc(btn, des) {
   }
 }
 
-function showUl() {
+function showUl(e) {
+  e.preventDefault();
   if (showingUl === false) {
     arrow.style.transform = 'rotate(-180deg)';
     ul.style.maxHeight = '100vh';
@@ -30,11 +31,22 @@ function showUl() {
   }
 }
 
+function isMobile() {
+  if (navigator.userAgent.match(/Android/i)
+    || navigator.userAgent.match(/iPhone/i)
+    || navigator.userAgent.match(/iPad/i)
+    || navigator.userAgent.match(/iPod/i)
+    || navigator.userAgent.match(/BlackBerry/i)
+    || navigator.userAgent.match(/Windows Phone/i)
+    || navigator.userAgent.match(/Opera Mini/i)
+    || navigator.userAgent.match(/IEMobile/i)
+  ) {
+    return true;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-  toggleMenu.addEventListener('click', showUl)
-  toggleMenu.addEventListener('touchstart', showUl)
-  btn1.addEventListener('click', _ => { toggleDesc(btn1, desc1) })
-  btn1.addEventListener('touchstart', _ => { toggleDesc(btn1, desc1) })
-  btn2.addEventListener('click', _ => { toggleDesc(btn2, desc2) })
-  btn2.addEventListener('touchstart', _ => { toggleDesc(btn2, desc2) })
+  toggleMenu.addEventListener(isMobile() ? 'click' : 'touchstart', showUl)
+  btn1.addEventListener(isMobile() ? 'click' : 'touchstart', _ => { toggleDesc(btn1, desc1) })
+  btn2.addEventListener(isMobile() ? 'click' : 'touchstart', _ => { toggleDesc(btn2, desc2) })
 })
