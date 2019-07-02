@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleMenu.addEventListener('click', (e) => {
     if (showingUl === false) {
       // arrow.style.transform = 'rotate(-180deg)';
+      toggleMenu.style.border = '2px red solid';
       ul.style.maxHeight = '100vh';
       showingUl = true;
     } else {
@@ -31,6 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
       showingUl = false;
     }
   })
-  btn1.addEventListener('click', e => { toggleDesc(btn1, desc1) })
-  btn2.addEventListener('click', (e) => { toggleDesc(btn2, desc2) })
+  btn1.addEventListener('click', _ => { toggleDesc(btn1, desc1) })
+  btn2.addEventListener('click', _ => { toggleDesc(btn2, desc2) })
 })
