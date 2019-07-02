@@ -32,6 +32,9 @@ function showUl() {
 
 document.addEventListener('DOMContentLoaded', function () {
   toggleMenu.addEventListener('click', showUl)
+  toggleMenu.addEventListener('touchstart', showUl)
   btn1.addEventListener('click', _ => { toggleDesc(btn1, desc1) })
+  btn1.addEventListener('touchstart', _ => { toggleDesc(btn1, desc1) })
   btn2.addEventListener('click', _ => { toggleDesc(btn2, desc2) })
+  btn2.addEventListener('touchstart', _ => { toggleDesc(btn2, desc2) })
 })

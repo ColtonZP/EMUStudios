@@ -15,7 +15,7 @@ html {
 }
 
 header {
-  background: black url('imgs/header.jpg') no-repeat fixed top/400%;
+  background: black url('imgs/header.jpg') no-repeat center/cover;
   width: 100%;
   text-align: center;
   box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.75);
@@ -24,11 +24,9 @@ header {
   z-index: 2;
 
   @media screen and (min-width: 768px) {
-    background-size: 200%;
   }
 
   @media screen and (min-width: 1300px) {
-    background-size: 125%;
     top: -100px;
   }
 
