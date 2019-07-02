@@ -1,6 +1,6 @@
 const toggleMenu = document.querySelector('.toggleMenu');
 const ul = document.querySelector('UL');
-const arrow = toggleMenu.querySelector('SVG');
+const arrow = toggleMenu.querySelector('IMG');
 const btn1 = document.querySelector('.btn1');
 const btn2 = document.querySelector('.btn2');
 
