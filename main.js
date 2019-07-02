@@ -9,7 +9,7 @@ const btn2 = document.querySelector('.btn2');
 let showingUl = false;
 
 function toggleDesc(btn, des) {
-  console.log('clicked');
+  evt.preventDefault()
   if (btn.innerHTML === 'Show more') {
     des.style.maxHeight = '100vh';
     btn.innerHTML = 'Show less';
