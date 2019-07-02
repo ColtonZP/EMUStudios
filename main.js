@@ -46,7 +46,7 @@ function isMobile() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  toggleMenu.addEventListener(isMobile() ? 'click' : 'touchstart', showUl)
-  btn1.addEventListener(isMobile() ? 'click' : 'touchstart', _ => { toggleDesc(btn1, desc1) })
-  btn2.addEventListener(isMobile() ? 'click' : 'touchstart', _ => { toggleDesc(btn2, desc2) })
+  toggleMenu.addEventListener(isMobile() ? 'touchstart' : 'mobile', showUl)
+  btn1.addEventListener(isMobile() ? 'touchstart' : 'mobile', _ => { toggleDesc(btn1, desc1) })
+  btn2.addEventListener(isMobile() ? 'touchstart' : 'mobile', _ => { toggleDesc(btn2, desc2) })
 })
