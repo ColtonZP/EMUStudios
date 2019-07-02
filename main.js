@@ -21,13 +21,13 @@ function toggleDesc(btn, des) {
 function showUl(e) {
   e.preventDefault();
   if (showingUl === false) {
-    arrow.style.transform = 'rotate(-180deg)';
     ul.style.maxHeight = '100vh';
     showingUl = true;
+    arrow.style.transform = 'rotate(-180deg)';
   } else {
-    arrow.style.transform = 'rotate(0deg)';
     ul.style.maxHeight = '0px';
     showingUl = false;
+    arrow.style.transform = 'rotate(0deg)';
   }
 }
 
@@ -44,9 +44,11 @@ function isMobile() {
     return true;
   }
 }
+eventType = isMobile() ? 'touchstart' : 'click';
+console.log(eventType);
 
 document.addEventListener('DOMContentLoaded', function () {
-  toggleMenu.addEventListener(isMobile() ? 'touchstart' : 'mobile', showUl)
-  btn1.addEventListener(isMobile() ? 'touchstart' : 'mobile', _ => { toggleDesc(btn1, desc1) })
-  btn2.addEventListener(isMobile() ? 'touchstart' : 'mobile', _ => { toggleDesc(btn2, desc2) })
+  toggleMenu.addEventListener(eventType, showUl)
+  btn1.addEventListener(eventType, _ => { toggleDesc(btn1, desc1) })
+  btn2.addEventListener(eventType, _ => { toggleDesc(btn2, desc2) })
 })
