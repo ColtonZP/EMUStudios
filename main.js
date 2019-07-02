@@ -9,7 +9,6 @@ const btn2 = document.querySelector('.btn2');
 let showingUl = false;
 
 function toggleDesc(btn, des) {
-  evt.preventDefault()
   if (btn.innerHTML === 'Show more') {
     des.style.maxHeight = '100vh';
     btn.innerHTML = 'Show less';
@@ -19,18 +18,20 @@ function toggleDesc(btn, des) {
   }
 }
 
+function showUl() {
+  if (showingUl === false) {
+    arrow.style.transform = 'rotate(-180deg)';
+    ul.style.maxHeight = '100vh';
+    showingUl = true;
+  } else {
+    arrow.style.transform = 'rotate(0deg)';
+    ul.style.maxHeight = '0px';
+    showingUl = false;
+  }
+}
+
 document.addEventListener('DOMContentLoaded', function () {
-  toggleMenu.addEventListener('click', (e) => {
-    if (showingUl === false) {
-      arrow.style.transform = 'rotate(-180deg)';
-      ul.style.maxHeight = '100vh';
-      showingUl = true;
-    } else {
-      arrow.style.transform = 'rotate(0deg)';
-      ul.style.maxHeight = '0px';
-      showingUl = false;
-    }
-  })
+  toggleMenu.addEventListener('click', showUl)
   btn1.addEventListener('click', _ => { toggleDesc(btn1, desc1) })
   btn2.addEventListener('click', _ => { toggleDesc(btn2, desc2) })
 })
