@@ -23,7 +23,6 @@ document.addEventListener('DOMContentLoaded', function () {
   toggleMenu.addEventListener('click', (e) => {
     if (showingUl === false) {
       // arrow.style.transform = 'rotate(-180deg)';
-      toggleMenu.style.border = '2px red solid';
       ul.style.maxHeight = '100vh';
       showingUl = true;
     } else {
