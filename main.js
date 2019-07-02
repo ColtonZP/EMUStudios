@@ -22,11 +22,11 @@ function toggleDesc(btn, des) {
 document.addEventListener('DOMContentLoaded', function () {
   toggleMenu.addEventListener('click', (e) => {
     if (showingUl === false) {
-      arrow.style.transform = 'rotate(-180deg)';
+      // arrow.style.transform = 'rotate(-180deg)';
       ul.style.maxHeight = '100vh';
       showingUl = true;
     } else {
-      arrow.style.transform = 'rotate(0deg)';
+      // arrow.style.transform = 'rotate(0deg)';
       ul.style.maxHeight = '0px';
       showingUl = false;
     }
