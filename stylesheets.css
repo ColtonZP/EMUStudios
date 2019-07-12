@@ -258,7 +258,7 @@ header nav li a {
 @media screen and (min-width: 768px) {
   .bottom-player {
     padding: 10px 20px;
-    width: 70%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -285,7 +285,7 @@ main .container {
 @media screen and (min-width: 768px) {
   main .container {
     max-width: 1200px;
-    width: 70%;
+    width: 80%;
   }
 }
 
@@ -320,7 +320,7 @@ h2 {
   padding: 0;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1024px) {
   #singles-slideshow {
     display: -ms-grid;
     display: grid;
@@ -354,13 +354,36 @@ h2 {
   width: 100%;
 }
 
+@media screen and (max-width: 1024px) {
+  #singles-slideshow .slideshow img {
+    margin: 20px auto;
+  }
+}
+
 @media screen and (min-width: 768px) {
   .album-body {
     display: -ms-grid;
     display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .album-body {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
+  }
+}
+
+.album-body .album-info {
+  grid-column: span 2;
+}
+
+@media screen and (min-width: 1024px) {
+  .album-body .album-info {
+    grid-column: span 1;
   }
 }
 

@@ -215,7 +215,7 @@ header {
   padding: 10px calc(5% + 20px);
   @media screen and (min-width: 768px) {
     padding: 10px 20px;
-    width: 70%;
+    width: 80%;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -236,7 +236,7 @@ main {
     position: relative;
     @media screen and (min-width: 768px){
       max-width: 1200px;
-      width: 70%;
+      width: 80%;
     }
     & button {
       background: $green;
@@ -268,7 +268,7 @@ h2 {
 #singles-slideshow { 
   background: none;
   padding: 0;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1024px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
@@ -292,6 +292,9 @@ h2 {
   & .slideshow {
     & img {
       width: 100%;
+      @media screen and (max-width: 1024px) {
+        margin: 20px auto;
+      }
     }
   }
 }
@@ -299,8 +302,17 @@ h2 {
 .album-body {
   @media screen and (min-width: 768px) {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
+  }
+  @media screen and (min-width: 1024px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  & .album-info {
+    grid-column: span 2;
+    @media screen and (min-width: 1024px) {
+      grid-column: span 1;
+    }
   }
 }
 
