@@ -277,7 +277,7 @@ main {
 main .container {
   background: linear-gradient(-45deg, #151515, #2E2E2E);
   width: 90%;
-  margin: 20px auto;
+  margin: 50px auto;
   padding: 20px;
   position: relative;
 }
